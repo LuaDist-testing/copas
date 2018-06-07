@@ -1,8 +1,16 @@
-package = "Copas"
-version = "1.1.4-1"
+-- This file was automatically generated for the LuaDist project.
+
+package = "copas"
+version = "1.1.5-1"
+-- LuaDist source
 source = {
-   url = "http://luaforge.net/frs/download.php/3896/copas-1.1.4.tar.gz",
+  tag = "1.1.5-1",
+  url = "git://github.com/LuaDist-testing/copas.git"
 }
+-- Original source
+-- source = {
+--    url = "http://luaforge.net/frs/download.php/4027/copas-1.1.5.tar.gz",
+-- }
 description = {
    summary = "Coroutine Oriented Portable Asynchronous Services",
    detailed = [[
