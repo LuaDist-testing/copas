@@ -1,16 +1,8 @@
--- This file was automatically generated for the LuaDist project.
-
-package = "copas"
-version = "1.1.6-1"
--- LuaDist source
+package = "Copas"
+version = "1.2.0-1"
 source = {
-  tag = "1.1.6-1",
-  url = "git://github.com/LuaDist-testing/copas.git"
+   url = "http://www.keplerproject.org/files/copas-1.2.0.tar.gz",
 }
--- Original source
--- source = {
---    url = "http://github.com/downloads/keplerproject/copas/copas-1.1.6.tar.gz",
--- }
 description = {
    summary = "Coroutine Oriented Portable Asynchronous Services",
    detailed = [[
@@ -27,8 +19,8 @@ description = {
 }
 dependencies = {
    "lua >= 5.1",
-   "luasocket >= 2.0",
-   "coxpcall >= 1.13",
+   "luasocket >= 2.1",
+   "coxpcall >= 1.14",
 }
 build = {
    type = "builtin",
