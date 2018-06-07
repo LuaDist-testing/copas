@@ -1,17 +1,9 @@
--- This file was automatically generated for the LuaDist project.
-
-package = "copas"
-version = "1.2.1-1"
--- LuaDist source
+package = "Copas"
+version = "2.0.0-1"
 source = {
-  tag = "1.2.1-1",
-  url = "git://github.com/LuaDist-testing/copas.git"
+   url = "https://github.com/keplerproject/copas/archive/v2_0_0.tar.gz",
+   dir = "copas-2_0_0",
 }
--- Original source
--- source = {
---    url = "https://github.com/keplerproject/copas/archive/v1_2_1.tar.gz",
---    dir = "copas-1_2_1",
--- }
 description = {
    summary = "Coroutine Oriented Portable Asynchronous Services",
    detailed = [[
@@ -33,5 +25,11 @@ dependencies = {
 }
 build = {
    type = "builtin",
-   modules = { copas = "src/copas/copas.lua" } 
+   modules = { 
+     ["copas"] = "src/copas.lua",
+     ["copas.http"] = "src/copas/http.lua",
+     ["copas.ftp"] = "src/copas/ftp.lua",
+     ["copas.smtp"] = "src/copas/smtp.lua",
+     ["copas.limit"] = "src/copas/limit.lua",
+   }
 }
