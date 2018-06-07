@@ -1,7 +1,7 @@
 package = "Copas"
-version = "cvs-2"
+version = "1.1.6-1"
 source = {
-  url = "git://github.com/keplerproject/copas.git"
+   url = "http://github.com/downloads/keplerproject/copas/copas-1.1.6.tar.gz",
 }
 description = {
    summary = "Coroutine Oriented Portable Asynchronous Services",
@@ -23,6 +23,6 @@ dependencies = {
    "coxpcall >= 1.13",
 }
 build = {
-   type = "module",
-   modules = { copas = "src/copas/copas.lua" }
+   type = "builtin",
+   modules = { copas = "src/copas/copas.lua" } 
 }
