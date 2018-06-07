@@ -1,10 +1,10 @@
 -- This file was automatically generated for the LuaDist project.
 
 package = "copas"
-version = "2.0.0-1"
+version = "2.0.0-2"
 -- LuaDist source
 source = {
-  tag = "2.0.0-1",
+  tag = "2.0.0-2",
   url = "git://github.com/LuaDist-testing/copas.git"
 }
 -- Original source
@@ -27,7 +27,7 @@ description = {
    homepage = "http://www.keplerproject.org/copas/"
 }
 dependencies = {
-   "lua >= 5.1, < 5.3",
+   "lua >= 5.1, < 5.4",
    "luasocket >= 2.1",
    "coxpcall >= 1.14",
 }
