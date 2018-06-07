@@ -1,15 +1,15 @@
 -- This file was automatically generated for the LuaDist project.
 
 package = "copas"
-version = "1.1.2-1"
+version = "1.1.3-1"
 -- LuaDist source
 source = {
-  tag = "1.1.2-1",
+  tag = "1.1.3-1",
   url = "git://github.com/LuaDist-testing/copas.git"
 }
 -- Original source
 -- source = {
---    url = "http://luaforge.net/frs/download.php/3367/copas-1.1.2.tar.gz",
+--    url = "http://luaforge.net/frs/download.php/3409/copas-1.1.3.tar.gz",
 -- }
 description = {
    summary = "Coroutine Oriented Portable Asynchronous Services",
@@ -27,7 +27,8 @@ description = {
 }
 dependencies = {
    "lua >= 5.1",
-   "luasocket >= 2.0"
+   "luasocket >= 2.0",
+   "coxpcall >= 1.13",
 }
 build = {
    type = "make",
