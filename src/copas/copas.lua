@@ -18,9 +18,9 @@
 -- Contributors: Diego Nehab, Mike Pall, David Burgess, Leonardo Godinho,
 --               Thomas Harning Jr. and Gary NG
 --
--- Copyright 2007 - Kepler Project (www.keplerproject.org)
+-- Copyright 2005 - Kepler Project (www.keplerproject.org)
 --
--- $Id: copas.lua,v 1.28 2007/07/31 20:21:54 carregal Exp $
+-- $Id: copas.lua,v 1.30 2008/05/15 19:44:12 carregal Exp $
 -------------------------------------------------------------------------------
 local socket = require "socket"
 local WATCH_DOG_TIMEOUT = 120
@@ -53,9 +53,9 @@ end
 module ("copas", package.seeall)
 
 -- Meta information is public even if begining with an "_"
-_COPYRIGHT   = "Copyright (C) 2004-2007 Kepler Project"
+_COPYRIGHT   = "Copyright (C) 2005 Kepler Project"
 _DESCRIPTION = "Coroutine Oriented Portable Asynchronous Services"
-_VERSION     = "Copas 1.1.1"
+_VERSION     = "Copas 1.1.2"
 
 -------------------------------------------------------------------------------
 -- Simple set implementation based on LuaSocket's tinyirc.lua example
@@ -120,8 +120,8 @@ local _writing = newset() -- sockets currently being written
 -- Coroutine based socket I/O functions.
 -------------------------------------------------------------------------------
 -- reads a pattern from a client and yields to the reading set on timeouts
-function receive(client, pattern)
- local s, err, part
+function receive(client, pattern, part)
+ local s, err
  pattern = pattern or "*l"
  repeat
    s, err, part = client:receive(pattern, part)
