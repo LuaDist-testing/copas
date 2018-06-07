@@ -1,8 +1,16 @@
-package = "Copas"
-version = "1.1.3-1"
+-- This file was automatically generated for the LuaDist project.
+
+package = "copas"
+version = "1.1.4-1"
+-- LuaDist source
 source = {
-   url = "http://luaforge.net/frs/download.php/3409/copas-1.1.3.tar.gz",
+  tag = "1.1.4-1",
+  url = "git://github.com/LuaDist-testing/copas.git"
 }
+-- Original source
+-- source = {
+--    url = "http://luaforge.net/frs/download.php/3896/copas-1.1.4.tar.gz",
+-- }
 description = {
    summary = "Coroutine Oriented Portable Asynchronous Services",
    detailed = [[
@@ -23,9 +31,6 @@ dependencies = {
    "coxpcall >= 1.13",
 }
 build = {
-   type = "make",
-   build_pass = false,
-   install_variables = {
-      LUA_DIR = "$(LUADIR)"
-   }
+   type = "module",
+   modules = { copas = "src/copas/copas.lua" } 
 }

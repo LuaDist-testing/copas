@@ -20,7 +20,7 @@
 --
 -- Copyright 2005 - Kepler Project (www.keplerproject.org)
 --
--- $Id: copas.lua,v 1.31 2008/05/19 18:57:13 carregal Exp $
+-- $Id: copas.lua,v 1.34 2008/12/09 16:22:26 carregal Exp $
 -------------------------------------------------------------------------------
 local socket = require "socket"
 
@@ -58,7 +58,7 @@ module ("copas", package.seeall)
 -- Meta information is public even if begining with an "_"
 _COPYRIGHT   = "Copyright (C) 2005 Kepler Project"
 _DESCRIPTION = "Coroutine Oriented Portable Asynchronous Services"
-_VERSION     = "Copas 1.1.3"
+_VERSION     = "Copas 1.1.4"
 
 -------------------------------------------------------------------------------
 -- Simple set implementation based on LuaSocket's tinyirc.lua example
@@ -132,6 +132,9 @@ function receive(client, pattern, part)
        _reading_log[client] = nil
        return s, err, part
    end
+   if part and tonumber(pattern) then
+       pattern = pattern - #part
+   end
    _reading_log[client] = os.time()
    coroutine.yield(client, _reading)
  until false
@@ -179,20 +182,19 @@ function send(client,data, from, to)
 end
 
 -- waits until connection is completed
-function connect(skt,host, port)
-       skt:settimeout(0)
-       local ret,err = skt:connect (host, port)
-       if ret or err ~= "timeout" then
-       return ret, err
-   end
-   _writing_log[skt] = os.time()
-       coroutine.yield(skt, _writing)
-       ret,err = skt:connect (host, port)
-   _writing_log[skt] = nil
-       if (err=="already connected") then
-               return 1
-       end
-       return ret, err
+function connect(skt, host, port)
+	skt:settimeout(0)
+	local ret, err
+	repeat
+		ret, err = skt:connect (host, port)
+		if ret or err ~= "timeout" then
+			_writing_log[skt] = nil
+			return ret, err
+		end
+		_writing_log[skt] = os.time()
+		coroutine.yield(skt, _writing)
+	until false
+	return ret, err
 end
 
 -- flushes a client write buffer (deprecated)
