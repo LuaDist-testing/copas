@@ -1,16 +1,16 @@
 -- This file was automatically generated for the LuaDist project.
 
 package = "copas"
-version = "2.0.1-1"
+version = "2.0.2-1"
 -- LuaDist source
 source = {
-  tag = "2.0.1-1",
+  tag = "2.0.2-1",
   url = "git://github.com/LuaDist-testing/copas.git"
 }
 -- Original source
 -- source = {
---    url = "https://github.com/keplerproject/copas/archive/v2_0_1.tar.gz",
---    dir = "copas-2_0_1",
+--    url = "https://github.com/keplerproject/copas/archive/v2_0_2.tar.gz",
+--    dir = "copas-2_0_2",
 -- }
 description = {
    summary = "Coroutine Oriented Portable Asynchronous Services",
